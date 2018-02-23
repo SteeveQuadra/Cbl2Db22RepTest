@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cbl2Db22RepTest.Views"
+             x:Class="Cbl2Db22RepTest.MainPage">
+
+	<ScrollView >
+
+		<StackLayout x:Name="layoutPage" Style="{StaticResource layoutPage}">
+			<local:HeaderStackLayout x:Name="Header" HeaderText="Acceuil" BackButtonVisibility="False" />
+
+			<StackLayout x:Name="layoutPrincipal" Style="{StaticResource layoutMenuPrincipal}">
+
+				<StackLayout x:Name="layoutOption" Style="{StaticResource layoutMenuGroup}">
+					<StackLayout x:Name="layoutOptionAdd" Orientation="Vertical">
+						<Button  x:Name="btnAddOption" Image="playlist_add.png" Style="{StaticResource buttonMenu}"  Clicked="BtnAddOption_Clicked" />
+						<Label  Text="Replicator"  Style="{StaticResource labelMenu}" />
+					</StackLayout>
+					<StackLayout x:Name="layoutOptionList" Orientation="Vertical">
+						<Button  x:Name="btnOptions" Image="list.png" Style="{StaticResource buttonMenu}"  Clicked="BtnOptions_Clicked" />
+						<Label  Text="Infos" Style="{StaticResource labelMenu}" />
+					</StackLayout>
+				</StackLayout>
+			</StackLayout>
+		</StackLayout>
+	</ScrollView>
+
+</ContentPage>

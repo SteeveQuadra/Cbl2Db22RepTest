@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout  x:Name="stkHdr" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cbl2Db22RepTest.Views.HeaderStackLayout"
+			  Style="{StaticResource layoutHeader}">
+	<StackLayout BindingContext="{x:Reference stkHdr}" Style="{StaticResource subLayoutHeader}">
+		<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+			<Button  x:Name="btnBack" Image="keyboard_backspace.png" Style="{StaticResource buttonHeader}" Clicked="BtnBack_Clicked" IsEnabled="{Binding BackButtonVisibility, Mode=OneWay}" HorizontalOptions="Start" ></Button>
+			<Label Style="{StaticResource labelHeader}" Text="{Binding HeaderText,Mode=OneWay}" HorizontalOptions="Start" />
+		</StackLayout>
+		<StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+			<Image Source="{Binding ImageConnection, Mode=OneWay}" BackgroundColor="Transparent" Margin="0,0,20,0"/>
+			<Label Style="{StaticResource labelHeader}" Text="{Binding Avancement,Mode=OneWay}" HorizontalOptions="End" />
+			<Button Image="{Binding ImageStatusReplication, Mode=OneWay}" Style="{StaticResource buttonHeader}" Margin="0,0,20,0"  Clicked="BtnReplicator_Clicked"/>
+			<Button Image="{Binding ImageLogin, Mode=OneWay}" Style="{StaticResource buttonHeader}" Clicked="BtnLogin_Clicked" />
+			<Label Text="{Binding VendeurActif, Mode=OneWay}" Style="{StaticResource labelLogin}" HorizontalOptions="Start" />
+			<Button Image="infos_white.png" Style="{StaticResource buttonHeader}" Clicked="BtnInfo_Clicked" Margin="20,0,0,0" />
+		</StackLayout>
+	</StackLayout>
+</StackLayout>

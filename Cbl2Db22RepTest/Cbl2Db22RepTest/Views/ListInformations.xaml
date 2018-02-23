@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:Cbl2Db22RepTest.Views"
+             x:Class="Cbl2Db22RepTest.Views.ListInformations"
+			 Style="{StaticResource page}">
+    <ContentPage.Content>
+		<StackLayout  x:Name="layoutPage" Style="{StaticResource layoutPage}" >
+			<local:HeaderStackLayout x:Name="Header" HeaderText="Informations" BackButtonVisibility="True"/>
+			<StackLayout  Style="{StaticResource layoutPrincipalList}"  >
+				<Label   Style="{StaticResource labelMenu}" x:Name="lblDevice">
+					<Label.Text>
+						<OnIdiom x:TypeArguments="x:String" Tablet="Tablet" Phone="Phone" Desktop="Desktop"/>
+					</Label.Text>
+				</Label>
+				<Button x:Name="btnRefresh" Image="recherche.png" Style="{StaticResource buttonAdd}" Command="{Binding RefreshCommand}" HorizontalOptions="End"/>
+				<ListView ItemsSource="{Binding Informations, Mode=OneWay}" SeparatorVisibility="Default" SeparatorColor="#888b8b" >
+					<ListView.Header>
+						<Grid >
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="0.30*"/>
+								<ColumnDefinition Width="0.10*"/>
+								<ColumnDefinition Width="0.60*"/>
+							</Grid.ColumnDefinitions>
+
+							<BoxView Grid.ColumnSpan="3" BackgroundColor="#808B94" HorizontalOptions="FillAndExpand"/>
+							<Label Grid.Column="0" Text="Type d'information" Style="{StaticResource listviewHeader}"></Label>
+							<Label Grid.Column="1" Text="Quantité" Style="{StaticResource listviewHeader}"></Label>
+							<Label Grid.Column="2" Text="Remarque" Style="{StaticResource listviewHeader}"></Label>
+						</Grid>
+					</ListView.Header>
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<Grid>
+										<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="0.30*"/>
+										<ColumnDefinition Width="0.10*"/>
+										<ColumnDefinition Width="0.60*"/>
+									</Grid.ColumnDefinitions>
+
+									<Label Grid.Column="0" Text="{Binding Info, Mode=OneWay}" Style="{StaticResource listviewBody}"></Label>
+									<Label Grid.Column="1" Text="{Binding Quantite, Mode=OneWay}" Style="{StaticResource listviewBody}"></Label>
+									<Label Grid.Column="2" Text="{Binding Remarque, Mode=OneWay}" Style="{StaticResource listviewBody}"></Label>
+								</Grid>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

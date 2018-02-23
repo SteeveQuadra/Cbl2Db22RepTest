@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cbl2Db22RepTest.App">
+	<Application.Resources>
+		<ResourceDictionary >
+			<Style  x:Key="page" TargetType="ContentPage" ApplyToDerivedTypes="True">
+				<Setter Property="BackgroundColor" Value="#F8FBFE" />
+			</Style>
+
+			<Style x:Key="labelMenu" TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+				<Setter Property="FontSize" Value="Default"/>
+				<Setter Property="TextColor" Value="#808B94" />
+				<Setter Property="Margin">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="Thickness" Tablet="0, 5, 0, 15" Phone="0, 0, 0, 0" Desktop="0, 10, 0, 30"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="buttonMenu" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="BorderColor" Value="#D8D8D8"/>
+				<Setter Property="BorderWidth" Value="1" />
+				<Setter Property="WidthRequest">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="x:Int32" Tablet="170" Phone="100" Desktop="180"/>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="HeightRequest">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="x:Int32" Tablet="170" Phone="100" Desktop="180"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="layoutPage" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="FillAndExpand" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation" Value="Vertical" />
+			</Style>
+
+			<Style x:Key="layoutMenuGroup" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="FillAndExpand" />
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+				<Setter Property="Orientation">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="x:String" Tablet="Vertical" Phone="Horizontal" Desktop="Vertical"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="layoutMenuPrincipal" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="FillAndExpand" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="x:String" Tablet="Horizontal" Phone="Vertical" Desktop="Horizontal"/>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="Padding">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="Thickness" Tablet="100, 10, 100, 0" Phone="0, 0, 0, 0" Desktop="150, 100, 150, 0"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="layoutPrincipal" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="FillAndExpand" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="x:String" Tablet="Horizontal" Phone="Vertical" Desktop="Horizontal"/>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="Padding">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="Thickness" Tablet="100, 0, 100, 0" Phone="0, 0, 0, 0" Desktop="150, 0, 150, 0"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="layoutPrincipalList" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="FillAndExpand" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation" Value="Vertical"/>
+				<Setter Property="Padding">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="Thickness" Tablet="100, 0, 100, 0" Phone="0, 0, 0, 0" Desktop="150, 0, 150, 0"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="layoutSection" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="FillAndExpand" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation" Value="Vertical" />
+			</Style>
+
+
+
+			<Style x:Key="layoutHeader" TargetType="StackLayout">
+				<Setter Property="BackgroundColor" Value="#374D5E" />
+				<Setter Property="VerticalOptions" Value="Start" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation" Value="Horizontal" />
+				<Setter Property="Padding">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="Thickness" Tablet="100, 5, 100, 5" Phone="0, 2, 0, 2" Desktop="150, 10, 150, 10"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="subLayoutHeader" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="Start" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation" Value="Horizontal" />
+			</Style>
+
+			<Style x:Key="labelHeader" TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="FontSize" Value="Default"/>
+				<Setter Property="FontAttributes" Value="Bold"/>
+				<Setter Property="TextColor" Value="White" />
+			</Style>
+
+			<Style x:Key="labelLogin" TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="FontSize" Value="Micro"/>
+				<Setter Property="TextColor" Value="#999999" />
+			</Style>
+
+			<Style x:Key="buttonHeader" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="Transparent" />
+			</Style>
+
+			<Style x:Key="labelTitreSection" TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+				<Setter Property="FontSize" Value="Default"/>
+				<Setter Property="TextColor" Value="#4D555B" />
+				<Setter Property="FontAttributes" Value="Bold"/>
+			</Style>
+
+			<Style x:Key="labelTitreRecapSection" TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="FontSize" Value="12"/>
+				<Setter Property="TextColor" Value="#4D555B" />
+				<Setter Property="FontAttributes" Value="Bold"/>
+				<Setter Property="Margin" Value="0,10,0,0" />
+			</Style>
+
+			<Style x:Key="layoutTitreSection" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="Start" />
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="Orientation" Value="Horizontal" />
+				<Setter Property="Margin" Value="0,0,0,10" />
+			</Style>
+
+			<Style x:Key="layoutRecapSection" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="Start" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation" Value="Vertical" />
+			</Style>
+
+			<Style x:Key="boxViewRecapSection" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="Start" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="Padding">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="Thickness" Tablet="5,5,10,5" Phone="1, 2, 4, 1" Desktop="10,10,15,10"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="entryStandard" TargetType="Entry">
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="Margin" Value="0,0,10,15" />
+				<Setter Property="PlaceholderColor" Value="#808B94" />
+			</Style>
+
+			<Style x:Key="entryStandardError" TargetType="Entry">
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="TextColor" Value="Red" />
+				<Setter Property="Margin" Value="0,0,10,15" />
+				<Setter Property="PlaceholderColor" Value="#808B94" />
+			</Style>
+
+			<Style x:Key="labelEntryStandard" TargetType="Label">
+				<Setter Property="VerticalOptions" Value="End" />
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="FontSize" Value="12"/>
+				<Setter Property="TextColor" Value="#808B94" />
+			</Style>
+
+			<Style x:Key="labelEntryBold" TargetType="Label">
+				<Setter Property="VerticalOptions" Value="End" />
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="FontSize" Value="12"/>
+				<Setter Property="TextColor" Value="#808B94" />
+				<Setter Property="FontAttributes" Value="Bold"/>
+			</Style>
+
+			<Style x:Key="labelOblig" TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="Start" />
+				<Setter Property="VerticalOptions" Value="End" />
+				<Setter Property="FontSize" Value="12"/>
+				<Setter Property="TextColor" Value="red" />
+				<Setter Property="FontAttributes" Value="Bold"/>
+			</Style>
+
+
+			<Style x:Key="layoutLigneSection" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="StartAndExpand" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="x:String" Tablet="Horizontal" Phone="Vertical" Desktop="Horizontal"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="layoutLigneRecapSection" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="StartAndExpand" />
+				<Setter Property="HorizontalOptions" Value="StartAndExpand" />
+				<Setter Property="Orientation" Value="Horizontal"/>
+			</Style>
+
+			<Style x:Key="layoutMultiLignesRecapSection" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="StartAndExpand" />
+				<Setter Property="HorizontalOptions" Value="StartAndExpand" />
+				<Setter Property="Orientation" Value="Vertical"/>
+			</Style>
+
+			<Style x:Key="buttonAdd" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="BorderColor" Value="#D8D8D8"/>
+				<Setter Property="BorderWidth" Value="1" />
+				<!--<Setter Property="WidthRequest">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="x:Int32" Tablet="100" Phone="80" Desktop="100"/>
+					</Setter.Value>
+				</Setter>
+				<Setter Property="HeightRequest">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="x:Int32" Tablet="100" Phone="80" Desktop="100"/>
+					</Setter.Value>
+				</Setter>-->
+			</Style>
+
+			<Style x:Key="buttonGray" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="#E7EFF5" />
+				<Setter Property="BorderWidth" Value="0" />
+				<Setter Property="TextColor" Value="#808B94"/>
+			</Style>
+
+			<Style x:Key="buttonGreen" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="#98C534" />
+				<Setter Property="BorderWidth" Value="0" />
+				<Setter Property="TextColor" Value="White"/>
+			</Style>
+
+			<Style x:Key="listviewHeader" TargetType="Label">
+				<Setter Property="TextColor" Value="White"/>
+				<Setter Property="FontAttributes" Value="Bold"/>
+				<Setter Property="FontSize" Value="14"/>
+			</Style>
+
+			<Style x:Key="listviewBody" TargetType="Label">
+				<Setter Property="TextColor" Value="#808B94"/>
+				<Setter Property="FontAttributes" Value="Bold"/>
+				<Setter Property="FontSize" Value="14"/>
+			</Style>
+
+			<Style x:Key="buttonPassif" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="BorderColor" Value="#D8D8D8"/>
+				<Setter Property="BorderWidth" Value="1" />
+				<Setter Property="TextColor" Value="#808B94"/>
+				<Setter Property="Margin">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="Thickness" Tablet="3, 3,3, 3" Phone="0, 2, 0,2" Desktop="5, 7, 5, 7"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="buttonActif" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="#FFC629" />
+				<Setter Property="BorderWidth" Value="0" />
+				<Setter Property="TextColor" Value="White"/>
+				<Setter Property="Margin">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="Thickness" Tablet="3, 3,3, 3" Phone="0, 2, 0,2" Desktop="5, 7, 5, 7"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+
+			<Style x:Key="layoutCenter" TargetType="StackLayout">
+				<Setter Property="VerticalOptions" Value="FillAndExpand" />
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="Orientation" Value="Vertical"/>
+				<Setter Property="Padding">
+					<Setter.Value>
+						<OnIdiom x:TypeArguments="Thickness" Tablet="100, 0, 100, 0" Phone="0, 0, 0, 0" Desktop="150, 0, 150, 0"/>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</ResourceDictionary >
+	</Application.Resources>
+</Application>

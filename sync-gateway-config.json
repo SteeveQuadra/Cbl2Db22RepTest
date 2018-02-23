@@ -1,0 +1,33 @@
+{
+    "databases": 	
+	{
+		"mobilotis": 
+		{
+			"log": ["*"],
+			"server": "http://localhost:8091",
+			"bucket": "mobilotis",
+			"username": "mobilotis",
+			"password": "PASSW",
+			"users": 
+			{
+				"quadra": 
+				{
+					"disabled": false, 
+					"admin_channels": ["*"], 
+					"password":"passsync", 
+					"name":"quadra"
+				}
+			},
+			"enable_shared_bucket_access": true,
+            "import_docs": "continuous",
+			"unsupported": {
+				"replicator_2": true
+			  },
+			"sync": `function (doc, oldDoc) {
+				if (doc.sdk) {
+					channel(doc.sdk);
+				}
+			}`
+		}
+    }
+}

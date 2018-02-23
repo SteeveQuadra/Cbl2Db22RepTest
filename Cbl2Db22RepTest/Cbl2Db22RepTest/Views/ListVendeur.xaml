@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:Cbl2Db22RepTest.Views"
+             x:Class="Cbl2Db22RepTest.Views.ListVendeur"
+			 Style="{StaticResource page}">
+    <ContentPage.Content>
+		<StackLayout  x:Name="layoutPage" Style="{StaticResource layoutPage}" >
+			<local:HeaderStackLayout x:Name="Header" HeaderText="Selection du vendeur connecté" BackButtonVisibility="True"/>
+			<StackLayout  Style="{StaticResource layoutPrincipalList}"  >
+				<ListView ItemsSource="{Binding Vendeurs, Mode=OneWay}" SeparatorVisibility="Default" SeparatorColor="#888b8b" ItemTapped="ListFuturAcquereur_ItemTapped">
+					<ListView.Header>
+						<Grid >
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="1*"/>
+							</Grid.ColumnDefinitions>
+
+							<BoxView Grid.ColumnSpan="3" BackgroundColor="#808B94" HorizontalOptions="FillAndExpand"/>
+							<Label Grid.Column="0" Text="Nom" Style="{StaticResource listviewHeader}"></Label>
+							<Label Grid.Column="1" Text="Téléphone" Style="{StaticResource listviewHeader}"></Label>
+							<Label Grid.Column="2" Text="Email" Style="{StaticResource listviewHeader}"></Label>
+						</Grid>
+					</ListView.Header>
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="1*"/>
+											<ColumnDefinition Width="1*"/>
+											<ColumnDefinition Width="1*"/>
+										</Grid.ColumnDefinitions>
+
+
+										<Label Grid.Column="0" Text="{Binding Nom, Mode=OneWay}" Style="{StaticResource listviewBody}"></Label>
+										<Label Grid.Column="1" Text="{Binding Telephone, Mode=OneWay}" Style="{StaticResource listviewBody}"></Label>
+										<Label Grid.Column="2" Text="{Binding Email, Mode=OneWay}" Style="{StaticResource listviewBody}"></Label>
+									</Grid>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
